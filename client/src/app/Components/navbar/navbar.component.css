@@ -1,8 +1,18 @@
 .link {
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 700;
-font-size: 48px;
-text-align: center;
-color: #581DFF;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+  color: #581dff;
+}
+
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.active h1 {
+  color: orange;
 }
