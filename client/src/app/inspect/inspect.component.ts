@@ -26,6 +26,8 @@ export class InspectComponent implements OnInit {
     following: 171,
   };
 
+  errorMessage: string = '';
+
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {}
@@ -35,8 +37,9 @@ export class InspectComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userService
-      .inspectUser(this.username)
-      .subscribe((user) => (this.currentUser = user));
+    this.userService.inspectUser(this.username).subscribe(
+      (user) => (this.currentUser = user),
+      (error) => (this.errorMessage = error.error.message)
+    );
   }
 }

@@ -11,5 +11,13 @@
   <br />
   <button class="submit-button" (click)="onSubmit()">Inspect</button>
 
-  <app-profile [user]="currentUser"></app-profile>
+  <div class="error" *ngIf="errorMessage; else elseBlock">
+    <h1>
+      {{ errorMessage }}
+    </h1>
+  </div>
+
+  <ng-template #elseBlock>
+    <app-profile #elseBlock [user]="currentUser"></app-profile>
+  </ng-template>
 </div>
