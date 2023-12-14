@@ -66,16 +66,8 @@ export class DuelComponent implements OnInit {
   }
 
   chooseWinner(userOne: User, userTwo: User): number {
-    let userOneScore =
-      userOne['public-repos'] +
-      userOne['total-stars'] +
-      userOne['highest-starred'] +
-      userOne.followers;
-    let userTwoScore =
-      userTwo['public-repos'] +
-      userTwo['total-stars'] +
-      userTwo['highest-starred'] +
-      userTwo.followers;
+    let userOneScore = userOne['total-stars'] + userOne.followers;
+    let userTwoScore = userTwo['total-stars'] + userTwo.followers;
 
     console.log(userOneScore, userTwoScore);
 

@@ -27,6 +27,17 @@ a:visited {
   color: var(--purple);
 }
 
-.logo {
+.logo h1 {
   font-size: 70px;
+  line-height: 0px;
+}
+
+nav a div {
+  position: relative;
+}
+
+p {
+  color: var(--light-gray);
+  position: absolute;
+  top: 20px;
 }

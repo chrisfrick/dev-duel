@@ -29,16 +29,14 @@
     <div class="dual-profiles">
       <div *ngIf="winner === 1" class="winner-text">
         <p>
-          {{ currentUserOne?.username }} has more total stars, highest star
-          count, public repos, and followers than
+          {{ currentUserOne?.username }} has more total stars and followers than
           {{ currentUserTwo?.username }}
         </p>
       </div>
 
       <div *ngIf="winner === 2" class="winner-text">
         <p>
-          {{ currentUserTwo?.username }} has more total stars, highest star
-          count, public repos, and followers than
+          {{ currentUserTwo?.username }} has more total stars and followers than
           {{ currentUserOne?.username }}
         </p>
       </div>
