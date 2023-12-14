@@ -10,4 +10,8 @@
   <br />
   <br />
   <button class="submit-button" (click)="onSubmit()">Inspect</button>
+
+  <div *ngIf="user !== null">
+    {{ user | json }}
+  </div>
 </div>
