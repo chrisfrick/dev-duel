@@ -9,7 +9,7 @@
   <app-text-input (usernameChange)="receiveUsername($event)"></app-text-input>
   <br />
   <br />
-  <button class="submit-button" (click)="onSubmit()">Inspect</button>
+  <button class="button" (click)="onSubmit()">Inspect</button>
 
   <div class="error" *ngIf="errorMessage; else elseBlock">
     <h1>
