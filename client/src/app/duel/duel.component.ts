@@ -44,6 +44,8 @@ export class DuelComponent implements OnInit {
 
   errorMessage: string = '';
 
+  winner: number | null = null;
+
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {}
@@ -56,13 +58,47 @@ export class DuelComponent implements OnInit {
     this.usernameTwo = valueEmitted;
   }
 
+  chooseWinner(userOne: User, userTwo: User): number {
+    let userOneScore =
+      userOne['public-repos'] +
+      userOne['total-stars'] +
+      userOne['highest-starred'] +
+      userOne.followers;
+    let userTwoScore =
+      userTwo['public-repos'] +
+      userTwo['total-stars'] +
+      userTwo['highest-starred'] +
+      userTwo.followers;
+
+    console.log(userOneScore, userTwoScore);
+
+    return userOneScore > userTwoScore ? 1 : 2;
+  }
+
   onSubmit() {
     this.userService.duelUsers(this.usernameOne, this.usernameTwo).subscribe({
       next: (users) => {
         this.currentUserOne = users[0];
         this.currntUserTwo = users[1];
+        if (this.currentUserOne && this.currntUserTwo) {
+          this.winner = this.chooseWinner(
+            this.currentUserOne,
+            this.currntUserTwo
+          );
+        }
       },
       error: (error) => (this.errorMessage = error.error.message),
     });
+
+    // this.userService
+    //   .duelUsers(this.usernameOne, this.usernameTwo)
+    //   .then((users) => {
+    //     console.log(users);
+    //     if (users) {
+    //       this.currentUserOne = users[0];
+    //       this.currntUserTwo = users[1];
+    //       console.log(this.currentUserOne, this.currntUserTwo);
+    //     }
+    //   });
   }
 }

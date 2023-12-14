@@ -1,7 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Roboto&family=Roboto+Slab:wght@900&display=swap");
+
+:root {
+  --dark-grey: #121212;
+  --gray: #979197;
+  --light-gray: #c1bec1;
+  --lighter-gray: #edeced;
+  --purple: #7b2658;
+}
 
 body {
-  font-family: Nunito, sans-serif;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.05rem;
+  background-color: var(--dark-grey);
+  color: white;
+}
+
+.error h1 {
+  color: red;
 }

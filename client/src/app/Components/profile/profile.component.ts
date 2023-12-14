@@ -7,7 +7,9 @@ import User from 'src/types/User';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  @Input() user: User | null = null
+  @Input() user: User | null = null;
+
+  @Input() winner: boolean = false;
 
   constructor() {}
 

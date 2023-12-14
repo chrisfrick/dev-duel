@@ -1,5 +1,5 @@
 .vl {
-  border-left: 3px solid black;
+  border-left: 3px solid var(--light-gray);
   height: 10vh;
   margin: 0 10% 0 10%;
 }

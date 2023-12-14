@@ -27,8 +27,19 @@
 
   <ng-template #elseBlock>
     <div class="dual-profiles">
-      <app-profile [user]="currentUserOne"></app-profile>
-      <app-profile [user]="currntUserTwo"></app-profile>
+      <div class="winner-label">
+        <div *ngIf="winner == 1" class="winner"><h1>Winner</h1></div>
+        <div></div>
+        <div *ngIf="winner == 2" class="winner"><h1>Winner</h1></div>
+      </div>
+      <app-profile
+        [user]="currentUserOne"
+        [ngClass]="winner === 1 ? 'winner' : ''"
+      ></app-profile>
+      <app-profile
+        [user]="currntUserTwo"
+        [ngClass]="winner === 2 ? 'winner' : ''"
+      ></app-profile>
     </div>
   </ng-template>
 </div>
