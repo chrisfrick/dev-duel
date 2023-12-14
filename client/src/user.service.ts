@@ -17,10 +17,18 @@ export class UserService {
     return data;
   }
 
-  async duelUsers(user1 = 'fabpot', user2 = 'andrew') {
-    let data = await this.http
-      .get(duelUsersUrl + `username=${user1}&username=${user2}`)
-      .toPromise();
+  // async duelUsers(user1 = 'fabpot', user2 = 'andrew') {
+  //   let data = await this.http
+  //     .get(duelUsersUrl + `username=${user1}&username=${user2}`)
+  //     .toPromise();
+  //   console.log(data);
+  //   return data;
+  // }
+
+  duelUsers(user1 = 'fabpot', user2 = 'andrew') {
+    let data = this.http.get<User[]>(
+      duelUsersUrl + `username=${user1}&username=${user2}`
+    );
     console.log(data);
     return data;
   }

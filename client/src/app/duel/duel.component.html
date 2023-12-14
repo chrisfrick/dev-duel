@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20vh;
+    margin-top: 7vh;
   "
 >
   <div style="display: flex; flex-direction: row">
@@ -18,4 +18,17 @@
   <br />
   <br />
   <button class="submit-button" (click)="onSubmit()">Duel</button>
+
+  <div class="error" *ngIf="errorMessage; else elseBlock">
+    <h1>
+      {{ errorMessage }}
+    </h1>
+  </div>
+
+  <ng-template #elseBlock>
+    <div class="dual-profiles">
+      <app-profile [user]="currentUserOne"></app-profile>
+      <app-profile [user]="currntUserTwo"></app-profile>
+    </div>
+  </ng-template>
 </div>
