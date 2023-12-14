@@ -1,0 +1,16 @@
+<div *ngIf="user !== null" class="profile">
+  <div>Photo here</div>
+  <div class="user-properties">
+    <div><span>username</span> {{ user.username }}</div>
+    <div><span>name</span> {{ user.name }}</div>
+    <div><span>location</span> {{ user.location }}</div>
+    <div><span>titles</span> {{ user.titles.join(", ") }}</div>
+    <div><span>fav language</span> {{ user["favorite-language"] }}</div>
+    <div><span>total stars</span> {{ user["total-stars"] }}</div>
+    <div><span>highest star count</span> {{ user["highest-starred"] }}</div>
+    <div><span>public repos</span> {{ user["public-repos"] }}</div>
+    <div><span>followers</span> {{ user.followers }}</div>
+    <div><span>following</span> {{ user.following }}</div>
+  </div>
+</div>
+<div></div>
