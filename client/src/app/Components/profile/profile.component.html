@@ -1,5 +1,10 @@
 <div *ngIf="user !== null" class="profile">
-  <div>Photo here</div>
+  <div class="avatar">
+    <figure>
+      <img src="{{ user.avatar_url }}" />
+    </figure>
+    <figcaption>{{ user.bio }}</figcaption>
+  </div>
   <div class="user-properties">
     <div><span>username</span> {{ user.username }}</div>
     <div><span>name</span> {{ user.name }}</div>

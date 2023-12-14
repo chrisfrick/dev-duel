@@ -1,21 +1,43 @@
 .profile {
-  width: 500px;
+  width: 550px;
   height: 400px;
   margin-top: 30px;
   border: 1px solid rgba(0, 0, 0, 0.75);
   border-radius: 15px;
   display: flex;
+  justify-content: space-around;
   align-items: center;
   gap: 10px;
+}
+
+.user-properties div {
+  margin: 10px;
+}
+
+.avatar {
+  width: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8em;
+}
+
+.avatar figure img {
+  height: 100px;
+  width: auto;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
 }
 
 .user-properties div span {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 125px;
+  width: 130px;
   height: 25px;
   background: #e1f1ff;
   border: 1px solid rgba(0, 0, 0, 0.75);
   border-radius: 5px;
+  font-size: 0.8em;
 }
