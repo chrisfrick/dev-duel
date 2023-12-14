@@ -40,6 +40,7 @@ export class InspectComponent implements OnInit {
   }
 
   onSubmit() {
+    this.errorMessage = '';
     this.userService.inspectUser(this.username).subscribe({
       next: (user) => (this.currentUser = user),
       error: (error) => (this.errorMessage = error.error.message),

@@ -83,6 +83,7 @@ export class DuelComponent implements OnInit {
   }
 
   onSubmit() {
+    this.errorMessage = '';
     this.userService.duelUsers(this.usernameOne, this.usernameTwo).subscribe({
       next: (users) => {
         this.currentUserOne = users[0];
