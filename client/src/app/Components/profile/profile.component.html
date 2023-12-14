@@ -1,7 +1,10 @@
 <div *ngIf="user !== null">
-  <div class="crown"></div>
-  <div class="profile">
+  <div style="height: 40px">
+    <div *ngIf="winner" class="winner"><h1>Winner!</h1></div>
+  </div>
+  <div class="profile" [ngClass]="this.winner ? 'green' : ''">
     <div class="avatar">
+      <img *ngIf="winner" class="crown" src="../../../assets/crown.svg" />
       <figure>
         <img src="{{ user.avatar_url }}" />
       </figure>

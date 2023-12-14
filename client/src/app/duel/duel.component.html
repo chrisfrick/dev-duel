@@ -27,17 +27,30 @@
 
   <ng-template #elseBlock>
     <div class="dual-profiles">
-      <div class="winner-label">
-        <div *ngIf="winner == 1" class="winner"><h1>Winner</h1></div>
-        <div></div>
-        <div *ngIf="winner == 2" class="winner"><h1>Winner</h1></div>
+      <div *ngIf="winner === 1" class="winner-text">
+        <p>
+          {{ currentUserOne?.username }} has more total stars, highest star
+          count, public repos, and followers than
+          {{ currentUserTwo?.username }}
+        </p>
       </div>
+
+      <div *ngIf="winner === 2" class="winner-text">
+        <p>
+          {{ currentUserTwo?.username }} has more total stars, highest star
+          count, public repos, and followers than
+          {{ currentUserOne?.username }}
+        </p>
+      </div>
+
       <app-profile
         [user]="currentUserOne"
+        [winner]="winner === 1 ? true : false"
         [ngClass]="winner === 1 ? 'winner' : ''"
       ></app-profile>
       <app-profile
-        [user]="currntUserTwo"
+        [user]="currentUserTwo"
+        [winner]="winner === 2 ? true : false"
         [ngClass]="winner === 2 ? 'winner' : ''"
       ></app-profile>
     </div>

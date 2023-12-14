@@ -11,6 +11,10 @@
   background-color: rgba(127, 127, 127, 0.3);
 }
 
+.profile.green {
+  background-color: #1a442c;
+}
+
 .user-properties div {
   margin: 10px;
 }
@@ -43,8 +47,20 @@
   font-size: 0.8em;
 }
 
-:host.winner .crown {
-  width: 30px;
-  height: 30px;
-  background-color: gold;
+.winner h1 {
+  font-family: "Roboto Slab";
+  /* line-height: 10px;
+  height: 10px; */
+  margin: 0px;
+  padding: 0px;
+  color: green;
+  text-align: center;
+}
+
+.crown {
+  position: relative;
+  width: 60px;
+  height: auto;
+  top: 25px;
+  transform: rotate(5deg);
 }
